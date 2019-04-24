@@ -35,3 +35,20 @@ Schema Registry
     
     http://k1.nodesense.ai:8081/subjects
     http://k1.nodesense.ai:8081/subjects/invoices-value/versions
+    
+    curl -X DELETE http://k1.nodesense.ai:8081/subjects/invoices.new-value/versions/1
+    
+    CREATE STREAM invoice_stream (id varchar, qty int, amount int) WITH \
+    (kafka_topic='invoices.new', value_format='AVRO');
+    
+    
+    SELECT * FROM invoice_stream;
+
+
+
+
+
+    CREATE STREAM orderconfirmation_stream2 (orderId varchar, amount double) WITH \
+    (kafka_topic='order-confirmations-2', value_format='JSON');
+    
+    select * from orderconfirmation_stream2;

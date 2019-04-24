@@ -14,13 +14,13 @@ import static org.apache.kafka.clients.producer.ProducerConfig.KEY_SERIALIZER_CL
 import static org.apache.kafka.clients.producer.ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG;
 import static org.apache.kafka.clients.producer.ProducerConfig.*;
 
-//kafka-topics --zookeeper localhost:2181 --create --topic order-confirmations --replication-factor 1 --partitions 3
+//kafka-topics --zookeeper localhost:2181 --create --topic order-confirmations-2 --replication-factor 1 --partitions 4
 
 public class OrderConfirmationProducer {
     //public static String BOOTSTRAP_SERVERS = "116.203.31.40:9092";
 
-    public static String BOOTSTRAP_SERVERS = "localhost:9092";
-    public static String TOPIC = "order-confirmations";
+    public static String BOOTSTRAP_SERVERS = "k1.nodesense.ai:9092";
+    public static String TOPIC = "order-confirmations-2";
 
     static Random r = new Random();
 

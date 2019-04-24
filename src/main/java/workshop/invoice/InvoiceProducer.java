@@ -15,7 +15,7 @@ import java.util.Random;
 import java.util.concurrent.ExecutionException;
 //
 
-// kafka-topics --zookeeper k1.nodesense.ai:2181 --create --topic invoices --replication-factor 1 --partitions 3
+// kafka-topics --zookeeper k1.nodesense.ai:2181 --create --topic invoices.new --replication-factor 1 --partitions 3
 
 public class InvoiceProducer {
     public static String BOOTSTRAP_SERVERS = "k1.nodesense.ai:9092";
@@ -23,7 +23,7 @@ public class InvoiceProducer {
     public static String SCHEMA_REGISTRY = "http://k1.nodesense.ai:8081"; //default
 
     // public static String SCHEMA_REGISTRY = "http://localhost:8081"; //default
-    public static String TOPIC = "invoices";
+    public static String TOPIC = "invoices.new";
 
     static Random random = new Random();
     static int[] categories = {1, 2, 3, 4};
@@ -84,7 +84,7 @@ public class InvoiceProducer {
                     invoice); // actual invoice is value
             producer.send(record).get(); // get() sync wait
             System.out.println("Sent Invoice" + invoice);
-            Thread.sleep(1);
+            Thread.sleep(5000);
         }
     }
 }
