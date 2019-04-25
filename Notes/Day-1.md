@@ -1,3 +1,18 @@
+
+Below Ports to be enabled
+
+Port : 22 [SSH]
+Kafka port: 9092 
+Zookeeper port: 2181
+Rest proxy Port: 8082
+Kafka Schema Registry port: 8081
+Kafka Connect API: 8083
+Kafka control center: 9021
+MySQL: 3306
+PostgreSQL: 5432 [optional]
+
+
+
 create a file called zookeeper.bat, paste below command
 
 zookeeper-server-start %KAFKA_HOME%\etc\kafka\zookeeper.properties
